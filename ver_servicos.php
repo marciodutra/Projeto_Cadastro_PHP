@@ -5,9 +5,8 @@ $msg[1] = "Não foi possível selecionar o banco de dados!";
 
 // Fazendo a conexão com o servidor MySQL
 $conexao = mysql_connect("localhost","root","") or die($msg[0]);
-mysql_select_db("mydb",$conexao) or die($msg[1]);
+mysql_select_db("bd_keg",$conexao) or die($msg[1]);
 
-// Colocando o Início da tabela
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -26,27 +25,26 @@ include "css.php";
 <?php include "menu.php";?>
     
     <div id="box_right">
-    <h2>Trabalho Final - BD II</h2>
+    <h2>K & G Informatica</h2>
     <hr />
-    <p>A rela&ccedil;&atilde;o entre os pedidos e as Mercadorias:
-    <br>
-    <br>
-
+    <p>
 <table border="1"><tr>
-   <td><b>Nota Fiscal</b></td>
-   <td><b>Mercadorias C&oacute;digo</b></td>
-   <td><b>Quantidade</b></td>
+   <td><b>ID</b></td>
+   <td><b>Descri&ccedil;&atilde;o</b></td>
+   <td><b>Pre&ccedil;o</b></td>
 </tr>
 <?php
-
-$query = "SELECT Pedido_num_nota_fiscal, Mercadorias_codigo, quantidade FROM Pedido_has_Mercadorias order by Pedido_num_nota_fiscal";
+$conexao = mysql_connect("localhost","root","");
+mysql_select_db("bd_keg",$conexao);
+$query = "SELECT idServicos, descricao, preco FROM Servicos order by idServicos;";
 $resultado = mysql_query($query,$conexao);
+
 while ($linha = mysql_fetch_array($resultado)) {
    ?>
    <tr>
-      <td><?php echo $linha['Pedido_num_nota_fiscal']; ?></td>
-      <td><?php echo $linha['Mercadorias_codigo']; ?></td>
-      <td><?php echo $linha['quantidade']; ?></td>
+      <td><?php echo $linha['idServicos']; ?></td>
+      <td><?php echo $linha['descricao']; ?></td>
+      <td><?php echo $linha['preco']; ?></td>
    </tr>
    <?php
 }

@@ -1,20 +1,20 @@
 <?php
 // Mensagens de Erro
-$msg[0] = "Conexï¿½o com o banco falhou!";
-$msg[1] = "Nï¿½o foi possï¿½vel selecionar o banco de dados!";
+$msg[0] = "Conexão com o banco falhou!";
+$msg[1] = "Não foi possível selecionar o banco de dados!";
 
-// Fazendo a conexï¿½o com o servidor MySQL
+// Fazendo a conexão com o servidor MySQL
 $conexao = mysql_connect("localhost","root","") or die($msg[0]);
 mysql_select_db("mydb",$conexao) or die($msg[1]);
 
-// Colocando o Inï¿½cio da tabela
+// Colocando o Início da tabela
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 <?php
 include "css.php";
@@ -26,7 +26,7 @@ include "css.php";
 <?php include "menu.php";?>
     
     <div id="box_right">
-    <h2>Sistema de Cadastro em PHP</h2>
+    <h2>Trabalho Final - BD II</h2>
     <hr />
     <p>
 

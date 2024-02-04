@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 <?php
 include "css.php";
@@ -14,9 +14,9 @@ include "css.php";
 <?php include "menu.php";?>
     
     <div id="box_right">
-    <h2>Sistema de Cadastro em PHP</h2>
+    <h2>Sistema da Loja K & G</h2>
     <hr />
-    <p>Sistema para estoque de pe&ccedil;as, criado por Márcio Dutra.</p>
+    <p></p>
 	</div>
 
 </div>

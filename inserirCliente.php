@@ -4,11 +4,15 @@ if (getenv("REQUEST_METHOD") == "POST") {
    $RG = $_POST['RG'];	 
    $nome = $_POST['nome'];
    $endereco = $_POST['endereco'];
+   $telefone1 = $_POST['telefone1'];
+   $telefone2 = $_POST['telefone2'];
+   $email = $_POST['email'];
+   $cnpj = $_POST['cnpj'];
 
-   if ($CPF and $RG and $nome and $endereco) {
+   if ($CPF and $nome and $endereco and $telefone1) {
       $conexao = mysql_connect("localhost","root","");
-      mysql_select_db("mydb",$conexao);
-      $query = "INSERT INTO clientes VALUES('$CPF', '$RG', '$nome','$endereco')";
+      mysql_select_db("bd_keg",$conexao);
+      $query = "INSERT INTO Clientes(cpf, RG, nome, endereco, telefone1, telefone2, email, cnpj) VALUES('$CPF', '$RG', '$nome','$endereco', '$telefone1', '$telefone2', '$email','$cnpj')";
       mysql_query($query,$conexao);
    } else {
       $err = "Preencha todos os campos!";
@@ -20,7 +24,7 @@ if (getenv("REQUEST_METHOD") == "POST") {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 <?php
 include "css.php";
@@ -32,7 +36,7 @@ include "css.php";
 <?php include "menu.php";?>
     
     <div id="box_right">
-    <h2>Sistema de Cadastro em PHP</h2>
+    <h2>K & G Informatica</h2>
     <hr />
     <p>
 
@@ -49,12 +53,28 @@ include "css.php";
    <td><input type="text" size="15" name="CPF" maxlength="45"></td>
 </tr>
 <tr>
+   <td>CNPJ: </td>
+   <td><input type="text" size="15" name="cnpj" maxlength="45"></td>
+</tr>
+<tr>
    <td>RG: </td>
    <td><input type="text" size="15" name="RG" maxlength="45"></td>
 </tr>
 <tr>
    <td>Endere&ccedil;o: </td>
    <td><input type="text" size="15" name="endereco" maxlength="45"></td>
+</tr>
+<tr>
+   <td>Email: </td>
+   <td><input type="text" size="15" name="email" maxlength="45"></td>
+</tr>
+<tr>
+   <td>Fone: </td>
+   <td><input type="text" size="15" name="telefone1" maxlength="45"></td>
+</tr>
+<tr>
+   <td>Celular: </td>
+   <td><input type="text" size="15" name="telefone2" maxlength="45"></td>
 </tr>
 </table>
 <input type="submit" value="Inserir">

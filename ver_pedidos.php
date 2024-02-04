@@ -5,7 +5,7 @@ $msg[1] = "N�o foi poss�vel selecionar o banco de dados!";
 
 // Fazendo a conex�o com o servidor MySQL
 $conexao = mysql_connect("localhost","root","") or die($msg[0]);
-mysql_select_db("lojakastor",$conexao) or die($msg[1]);
+mysql_select_db("bd_keg",$conexao) or die($msg[1]);
 
 ?>
 
@@ -13,7 +13,7 @@ mysql_select_db("lojakastor",$conexao) or die($msg[1]);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 <?php
 include "css.php";
@@ -36,25 +36,27 @@ include "css.php";
    <td><b>Equipamento</b></td>
    <td><b>Voltagem</b></td>
    <td><b>Descri&ccedil;ao</b></td>
-   <td><b>Data</b></td>
+   <td><b>Data Entrada</b></td>
+   <td><b>Data Saida</b></td>
 </tr>
 <?php
 $conexao = mysql_connect("localhost","root","");
 mysql_select_db("lojakastor",$conexao);
-$query = "SELECT idPedido, Clientes_cpf, Servicos_idServicos, precoTotal, equipamento, descricao, data, voltagem FROM Pedido order by idPedido;";
+$query = "SELECT idPedido, Clientes_CPF, Servicos_idServicos, precoTotal, equipamento, descricao, dataEntrada, dataSaida, voltagem FROM Pedido order by idPedido;";
 $resultado = mysql_query($query,$conexao);
 
 while ($linha = mysql_fetch_array($resultado)) {
    ?>
    <tr>
       <td><?php echo $linha['idPedido']; ?></td>
-      <td><?php echo $linha['Clientes_cpf']; ?></td>
+      <td><?php echo $linha['Clientes_CPF']; ?></td>
       <td><?php echo $linha['Servicos_idServicos']; ?></td>
       <td><?php echo $linha['precoTotal']; ?></td>
       <td><?php echo $linha['equipamento']; ?></td>
       <td><?php echo $linha['voltagem']; ?></td>
       <td><?php echo $linha['descricao']; ?></td>
-      <td><?php echo $linha['data']; ?></td>
+      <td><?php echo $linha['dataEntrada']; ?></td>
+      <td><?php echo $linha['dataSaida']; ?></td>
    </tr>
    <?php
 }
@@ -63,6 +65,8 @@ while ($linha = mysql_fetch_array($resultado)) {
 	</div>
 
 </div>
+
+
 
 </body>
 </html>

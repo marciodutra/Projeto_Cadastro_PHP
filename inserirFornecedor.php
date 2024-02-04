@@ -24,7 +24,7 @@ if (getenv("REQUEST_METHOD") == "POST") {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 <?php
 include "css.php";
@@ -36,14 +36,14 @@ include "css.php";
 <?php include "menu.php";?>
     
     <div id="box_right">
-    <h2>Sistema de Cadastro em PHP</h2>
+    <h2>Trabalho Final - BD II</h2>
     <hr />
     <p>
 
 <h1>Insira aqui o Fornecedor</h1>
 
 <form method="post" action="">
-<table border="0">
+<table border="0"
 <tr>
    <td>Nome: </td>
    <td><input type="text" size="15" name="nome" maxlength="45"></td>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sistema de Cadastro em PHP</title>
+<title>Untitled Document</title>
 </head>
 
 <body>
@@ -14,20 +14,16 @@
 	    <p>Inserir</p>
             <hr />
             <li><a href="?pagina=inserirClientes">Novo Cliente</a></li>
-            <li><a href="?pagina=inserirFornecedores">Novo Fornecedor</a></li>
             <li><a href="?pagina=inserirMercadorias">Nova Mercadoria</a></li>
+            <li><a href="?pagina=inserirServicos">Novo Servi&ccedil;o</a></li>
             <li><a href="?pagina=pedido">Novo Pedido</a></li>
-            <li><a href="?pagina=pedidoFase2">Pedido Fase 2</a></li>
-            <li><a href="?pagina=fornecedorMercadoria">Fornecedor-Mercadoria</a></li>
 	    <br>
 	    <p>Visualizar</p>
             <hr />
             <li><a href="?pagina=clientes">Clientes</a></li>
-            <li><a href="?pagina=fornecedores">Fornecedores</a></li>
-            <li><a href="?pagina=mercadorias">Mercadorias</a></li>
             <li><a href="?pagina=ver_pedidos">Pedidos</a></li>
-            <li><a href="?pagina=ver_mercadorias_fornecedores">Fornecedor-Mercadoria</a></li> 
-            <li><a href="?pagina=ver_pedido_mercadorias">Fornecedor-Mercadoria</a></li> 
+            <li><a href="?pagina=mercadorias">Estoque</a></li>
+            <li><a href="?pagina=ver_servicos">Servi&ccedil;os</a></li>
         </ul>
 	</div>
 

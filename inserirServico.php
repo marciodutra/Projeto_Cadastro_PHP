@@ -1,12 +1,12 @@
 <?php
 if (getenv("REQUEST_METHOD") == "POST") {
-   $nome = $_POST['nome'];
-   $quantidade = $_POST['quantidade'];
+   $descricao = $_POST['descricao'];
+   $preco = $_POST['preco'];
 
-   if ($nome and $quantidade) {
+   if ($descricao and $preco) {
       $conexao = mysql_connect("localhost","root","");
       mysql_select_db("bd_keg",$conexao);
-      $query = "INSERT INTO Estoque(nome, quantidade) VALUES('$nome', $quantidade)";
+      $query = "INSERT INTO Servicos(descricao, preco) VALUES('$descricao', '$preco')";
       mysql_query($query,$conexao);
    } else {
       $err = "Preencha todos os campos!";
@@ -34,17 +34,17 @@ include "css.php";
     <hr />
     <p>
 
-<h1>Insira aqui a Mercadoria no estoque</h1>
+<h1>Insira um novo Servi&ccedil;o</h1>
 
 <form method="post" action="">
 <table border="0"
 <tr>
-   <td>Nome: </td>
-   <td><input type="text" size="15" name="nome" maxlength="45"></td>
+   <td>Descri&ccedil;&atilde;o: </td>
+   <td><input type="text" size="75" name="descricao" maxlength="45"></td>
 </tr>
 <tr>
-   <td>Quantidade: </td>
-   <td><input type="text" size="15" name="quantidade" maxlength="45"></td>
+   <td>Pre&ccedil;o: </td>
+   <td><input type="text" size="15" name="preco" maxlength="45"></td>
 </tr>
 
 </table>
